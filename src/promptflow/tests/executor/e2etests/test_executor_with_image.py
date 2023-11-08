@@ -115,7 +115,9 @@ def assert_contain_image_object(value):
 class TestExecutorWithImage:
     @pytest.mark.parametrize(
         "flow_folder, inputs",
-        get_test_cases_for_simple_input() + get_test_cases_for_composite_input(COMPOSITE_IMAGE_FLOW) + get_test_cases_for_chat_flow()
+        get_test_cases_for_simple_input()
+        + get_test_cases_for_composite_input(COMPOSITE_IMAGE_FLOW)
+        + get_test_cases_for_chat_flow()
     )
     def test_executor_exec_line_with_image(self, flow_folder, inputs, dev_connections):
         working_dir = get_flow_folder(flow_folder)
